@@ -215,7 +215,7 @@ class _TrackDeliveryScreenState extends State<TrackDeliveryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('HydroXtrack'),
+        title: Text('Bill My Bottle'),
         backgroundColor: Colors.blue[600],
         foregroundColor: Colors.white,  
       ),
@@ -223,7 +223,8 @@ class _TrackDeliveryScreenState extends State<TrackDeliveryScreen> {
       body: Padding(
         padding: EdgeInsets.all(20),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        //  mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch, 
           children: [
             Text(
             'Track Every Drop. Simplify Every Delivery.',
@@ -233,7 +234,7 @@ class _TrackDeliveryScreenState extends State<TrackDeliveryScreen> {
           // SizedBox(height: 2),
           Image.asset(
             'assets/icons/20l_can.png',
-            height: 200,
+            height: 130,
           ),
           
           
@@ -263,7 +264,7 @@ class _TrackDeliveryScreenState extends State<TrackDeliveryScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 5),
+            SizedBox(height: 2),
             Card(
               elevation: 4,
               child: Padding(
@@ -274,7 +275,7 @@ class _TrackDeliveryScreenState extends State<TrackDeliveryScreen> {
                       '📖 Custom Log',
                       style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(height: 15),
+                    SizedBox(height: 10),
                     ListTile(
                       leading: Icon(Icons.calendar_today, color: Colors.blue[600]),
                       title: Text('Date'),
@@ -303,7 +304,7 @@ class _TrackDeliveryScreenState extends State<TrackDeliveryScreen> {
                         ],
                       ),
                     ),
-                    SizedBox(height: 8),
+                    SizedBox(height: 4),
                     ElevatedButton(
                       onPressed: () => _addDelivery(context, _selectedDate, _bottleCount),
                       style: ElevatedButton.styleFrom(
@@ -365,7 +366,7 @@ class _MonthlySummaryScreenState extends State<MonthlySummaryScreen> {
   final DatabaseHelper _dbHelper = DatabaseHelper();
   DateTime _selectedMonth = DateTime.now();
   List<Delivery> _monthlyDeliveries = [];
-  double _ratePerBottle = 20.0;
+  double _ratePerBottle = 60.0;
   bool _isLoading = true;
 
   @override
@@ -645,15 +646,14 @@ class _DeliveryHistoryScreenState extends State<DeliveryHistoryScreen> {
         return Card(
           margin: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
           child: ListTile(
-            leading: CircleAvatar(
-              backgroundColor: delivery.isPaid ? Colors.green : Colors.orange,
-              child: Text(
-                '${delivery.bottles}',
-                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-              ),
-            ),
+            leading:  Image.asset(
+                    'assets/icons/20l_bottle.png',
+                    width: 48,
+                    height: 48,
+                    fit: BoxFit.contain,
+                  ),
             title: Text(DateFormat('MMM dd, yyyy').format(delivery.date)),
-            subtitle: Text('${delivery.bottles} bottle(s)'),
+            //subtitle: Text('${delivery.bottles} bottle(s)'),
             trailing: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -690,6 +690,10 @@ class _DeliveryHistoryScreenState extends State<DeliveryHistoryScreen> {
       firstDay: DateTime.utc(2020, 1, 1),
       lastDay: DateTime.utc(2030, 12, 31),
       focusedDay: DateTime.now(),
+      calendarFormat: CalendarFormat.month,
+      availableCalendarFormats: const {
+    CalendarFormat.month: 'Month',
+  },
       eventLoader: (day) {
         return _deliveries.where((delivery) {
           return isSameDay(delivery.date, day);

@@ -14,5 +14,9 @@ A modern, minimal Flutter app to track your 20L water can deliveries and payment
 - ⚙️ **Custom Rate Setting** – Set or update the price per can anytime.
 
 
+## 📥 Download
+
+- 📱 [Download Android APK](https://github.com/sudheerthan/bill-my-bottle/releases/download/v1.0.0/BillMyBottle.apk)
+
 
 

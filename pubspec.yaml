@@ -29,8 +29,9 @@ flutter:
   uses-material-design: true
   assets:
     - assets/icons/20l_can.png
+    - assets/icons/20l_bottle.png
 
 flutter_launcher_icons:
   android: true
   ios: true
-  image_path: "assets/icon.png" # <-- path to your app icon
+  image_path: "assets/icon.png"
