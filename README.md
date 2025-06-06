@@ -1,16 +1,18 @@
-# flutter_application_1
+# 💧 Bill My Bottle
 
-A new Flutter project.
+**"Track Every Drop. Simplify Every Delivery."**
 
-## Getting Started
+A modern, minimal Flutter app to track your 20L water can deliveries and payments — ideal for households or small businesses that rely on water can supply.
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## 📱 Features
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- 🚚 **One-Tap Logging** – Quickly log today's water delivery with a tap.
+- 📝 **Manual Entry** – Add past deliveries with custom date and quantity.
+- 💵 **Payment Tracking** – Toggle each delivery as paid or unpaid.
+- 📆 **Calendar View** – View daily delivery history in an intuitive layout.
+- ⚙️ **Custom Rate Setting** – Set or update the price per can anytime.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
+
